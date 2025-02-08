@@ -4,11 +4,11 @@ import { Youtube, Twitter, Facebook, Instagram } from "lucide-react"
 
 export function SiteFooter() {
   return (
-    <footer className="bg-black text-white">
+    <footer className="bg-black flex justify-center text-white">
       <div className="container px-4 py-12 md:py-16">
         <div className="grid gap-8 md:grid-cols-6">
           {/* Logo and App Downloads */}
-          <div className="md:col-span-2">
+          {/* <div className="md:col-span-2">
             <Link href="/" className="mb-6 block">
               <Image
                 src="/placeholder.svg?height=40&width=120"
@@ -41,7 +41,7 @@ export function SiteFooter() {
                 </Link>
               </div>
             </div>
-          </div>
+          </div> */}
 
           {/* Links */}
           <div className="grid gap-8 sm:grid-cols-4 md:col-span-4">
@@ -81,11 +81,6 @@ export function SiteFooter() {
                 <li>
                   <Link href="/tickets" className="text-sm text-gray-400 hover:text-white">
                     Ticket sales
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/plus" className="text-sm text-gray-400 hover:text-white">
-                    Filmhouse+
                   </Link>
                 </li>
               </ul>

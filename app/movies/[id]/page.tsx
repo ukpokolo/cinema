@@ -11,18 +11,18 @@ import { MovieCard } from "@/components/movie-card"
 import { TicketDialog } from "@/components/ticket-dialog"
 import { PurchaseSteps } from "@/components/purchase-steps"
 
-// This would typically come from an API or database
+// Movie Data
 const movieData = {
   id: 1,
   title: "Dog Man",
   synopsis:
     "When a faithful police dog and his human police officer owner are injured together on the job, a harebrained but life-saving surgery fuses the two of them together and Dog Man is born. Dog Man is sworn to protect and serve—and fetch, sit and roll over.",
-  image: "/placeholder.svg",
+  image: "/dog.jpg",
   cast: [
-    { name: "Ricky Gervais", image: "/placeholder.svg", role: "Voice Actor" },
-    { name: "Scott Menville", image: "/placeholder.svg", role: "Voice Actor" },
-    { name: "Warren Sroka", image: "/placeholder.svg", role: "Voice Actor" },
-    { name: "Kelly Stables", image: "/placeholder.svg", role: "Voice Actor" },
+    { name: "Ricky Gervais", image: "/profile.png", role: "Voice Actor" },
+    { name: "Scott Menville", image: "/profile.png", role: "Voice Actor" },
+    { name: "Warren Sroka", image: "/profile.png", role: "Voice Actor" },
+    { name: "Kelly Stables", image: "/profile.png", role: "Voice Actor" },
   ],
   genres: ["Animation", "Action", "Comedy"],
 }
@@ -31,19 +31,19 @@ const relatedMovies = [
   {
     id: 2,
     title: "Love Hurts",
-    image: "/placeholder.svg",
+    image: "/dog.jpg",
     genres: ["Action", "Comedy"],
   },
   {
     id: 3,
     title: "Love Lockdown",
-    image: "/placeholder.svg",
+    image: "/captainamerica.jpg",
     genres: ["Drama"],
   },
   {
     id: 4,
     title: "Summer Rain",
-    image: "/placeholder.svg",
+    image: "/dog.jpg",
     genres: ["Drama"],
   },
 ]
@@ -85,21 +85,35 @@ export default function MoviePage() {
   const showShowtimes = selectedState && selectedCinema && selectedDate
 
   return (
-    <div className="min-h-screen bg-black">
+    <div className="flex justify-center w-full bg-black">
+
+    
+    <div className="min-h-screen pt-16  ">
+      {/* Back Button Section */}
+      <div className="container px-4 pt-6">
+        <Link 
+          href="/" 
+          className="inline-flex items-center gap-2 rounded-lg bg-black/50 px-4 py-2 text-sm font-medium text-white hover:bg-black/70"
+        >
+          <ArrowLeft className="h-4 w-4" />
+          Go back
+        </Link>
+      </div>
+
       {/* Movie Details Section */}
       <div className="relative">
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-black" />
 
         <div className="container relative px-4 py-8">
-          <Link href="/" className="mb-8 inline-flex items-center text-white hover:text-white/80">
-            <ArrowLeft className="mr-2 h-4 w-4" />
-            Go back
-          </Link>
-
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {/* Movie Poster */}
             <div className="relative aspect-[2/3] overflow-hidden rounded-lg">
-              <Image src={movieData.image || "/placeholder.svg"} alt={movieData.title} fill className="object-cover" />
+              <Image 
+                src={movieData.image || "/placeholder.svg"} 
+                alt={movieData.title} 
+                fill 
+                className="object-cover" 
+              />
               <Button
                 variant="outline"
                 className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-black/50 text-white hover:bg-black/70"
@@ -124,7 +138,12 @@ export default function MoviePage() {
                   {movieData.cast.map((actor) => (
                     <div key={actor.name} className="text-center">
                       <div className="relative mx-auto mb-2 h-20 w-20 overflow-hidden rounded-full">
-                        <Image src={actor.image || "/placeholder.svg"} alt={actor.name} fill className="object-cover" />
+                        <Image 
+                          src={actor.image || "/placeholder.svg"} 
+                          alt={actor.name} 
+                          fill 
+                          className="object-cover" 
+                        />
                       </div>
                       <div className="text-sm font-medium text-white">{actor.name}</div>
                       <div className="text-xs text-gray-400">{actor.role}</div>
@@ -137,7 +156,11 @@ export default function MoviePage() {
                 <h2 className="mb-2 text-sm font-semibold uppercase tracking-wider text-gray-400">Genre</h2>
                 <div className="flex gap-2">
                   {movieData.genres.map((genre) => (
-                    <Badge key={genre} variant="secondary" className="bg-white/10 text-white">
+                    <Badge 
+                      key={genre} 
+                      variant="secondary" 
+                      className="bg-white/10 text-white"
+                    >
                       {genre}
                     </Badge>
                   ))}
@@ -195,7 +218,9 @@ export default function MoviePage() {
                       ))}
                     </div>
                   ) : (
-                    <p className="text-sm text-gray-400">Select your preferred location and date to view showtimes</p>
+                    <p className="text-sm text-gray-400">
+                      Select your preferred location and date to view showtimes
+                    </p>
                   )}
                 </div>
               </div>
@@ -237,6 +262,6 @@ export default function MoviePage() {
         </div>
       </section>
     </div>
+    </div>
   )
 }
-

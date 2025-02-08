@@ -8,7 +8,7 @@ export function MainNav() {
       <div className="container flex h-16 items-center justify-between px-4">
         <Link href="/" className="flex items-center space-x-2">
           <Image
-            src="/placeholder.svg?height=40&width=120"
+            src="/logo.png?height=40&width=120"
             alt="FilmHouse Logo"
             width={120}
             height={40}
@@ -16,7 +16,7 @@ export function MainNav() {
           />
         </Link>
 
-        <div className="hidden md:flex items-center space-x-6">
+        {/* <div className="hidden md:flex items-center space-x-6">
           <Link href="/food-drinks" className="text-sm font-medium text-white hover:text-white/80 transition-colors">
             FOOD & DRINKS
           </Link>
@@ -34,7 +34,7 @@ export function MainNav() {
         <Link href="/cart" className="flex items-center space-x-1 text-white hover:text-white/80 transition-colors">
           <ShoppingCart className="h-5 w-5" />
           <span className="text-sm font-medium">CART</span>
-        </Link>
+        </Link> */}
       </div>
     </nav>
   )

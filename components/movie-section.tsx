@@ -10,25 +10,25 @@ const nowShowing = [
   {
     id: 1,
     title: "Dog Man",
-    image: "/placeholder.svg",
+    image: "/dog.jpg",
     genres: ["Family", "Animation"],
   },
   {
     id: 2,
     title: "Love Hurts",
-    image: "/placeholder.svg",
+    image: "/dog.jpg",
     genres: ["Action", "Comedy"],
   },
   {
     id: 3,
     title: "Love Lockdown",
-    image: "/placeholder.svg",
+    image: "/captainamerica.jpg",
     genres: ["Drama"],
   },
   {
     id: 4,
     title: "Summer Rain",
-    image: "/placeholder.svg",
+    image: "/captainamerica.jpg",
     genres: ["Drama"],
   },
   // Add more movies as needed
@@ -38,7 +38,7 @@ const comingSoon = [
   {
     id: 1,
     title: "Captain America: Brave New World",
-    image: "/placeholder.svg",
+    image: "/captainamerica.jpg",
     genres: ["Action", "Thriller"],
     releaseDate: "February 13, 2025",
   },
@@ -49,8 +49,8 @@ export function MovieSection() {
   const [activeTab, setActiveTab] = useState<"now" | "coming">("now")
 
   return (
-    <section className="bg-[#1a1d24] py-8">
-      <div className="container px-4">
+    <section className="bg-[#1a1d24] flex justify-center py-8">
+      <div className="container  px-4">
         {/* Tabs and Filters */}
         <div className="mb-8 flex flex-wrap items-center justify-between gap-4">
           <div className="flex gap-4">
@@ -59,7 +59,7 @@ export function MovieSection() {
               className={cn("text-gray-400 hover:text-white", activeTab === "now" && "text-white")}
               onClick={() => setActiveTab("now")}
             >
-              Now showing <span className="ml-2 text-xs">13</span>
+              Now showing <span className="ml-2 text-xs">4</span>
             </Button>
             <Button
               variant="ghost"
@@ -72,7 +72,7 @@ export function MovieSection() {
 
           <div className="flex gap-2">
             <Select defaultValue="lagos">
-              <SelectTrigger className="w-[120px] bg-black/50">
+              <SelectTrigger className="w-[120px] bg-white/50">
                 <SelectValue placeholder="Location" />
               </SelectTrigger>
               <SelectContent>
@@ -82,7 +82,7 @@ export function MovieSection() {
             </Select>
 
             <Select defaultValue="feb-9">
-              <SelectTrigger className="w-[120px] bg-black/50">
+              <SelectTrigger className="w-[120px] bg-white/50">
                 <SelectValue placeholder="Date" />
               </SelectTrigger>
               <SelectContent>
